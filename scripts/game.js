@@ -109,3 +109,9 @@ opcaoD[18] = "Washington";
 opcaoD[19] = "Opera";
 
 var gabarito = new Array('D', 'B', 'A', 'C', 'C', 'B', 'B', 'D', 'D', 'B', 'D', 'C', 'B', 'C', 'D', 'A', 'B', 'A', 'D', 'B');
+
+var questao = 0;
+function sortearPergunta() {
+	questao = Math.round(Math.random() * 19);
+}
+
