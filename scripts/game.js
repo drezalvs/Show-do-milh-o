@@ -119,6 +119,7 @@ function sortearPergunta() {
 	questao = Math.round(Math.random() * 19);
 
 	document.getElementById('pergunta').innerHTML = pergunta[questao];
+	document.getElementById('pergunta').style.backgroundColor = 'brown';
 
 	document.getElementById('opcaoA').value = opcaoA[questao];
 	document.getElementById('opcaoB').value = opcaoB[questao];
@@ -143,7 +144,7 @@ function sortearPergunta() {
                                     document.getElementById('pergunta').innerHTML = "Certa Resposta";
                                 }
                                 else {
-                                    document.getElementById('pergunta').style.backgroundColor = 'red';
+                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
                                     document.getElementById('pergunta').innerHTML = "Resposta Errada";
                                 }  
                                 break; 
