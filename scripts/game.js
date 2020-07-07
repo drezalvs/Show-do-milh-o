@@ -127,64 +127,105 @@ function sortearPergunta() {
 	document.getElementById('opcaoA').value = opcaoA[questao];
 	document.getElementById('opcaoB').value = opcaoB[questao];
 	document.getElementById('opcaoC').value = opcaoC[questao];
-	document.getElementById('opcaoD').value = opcaoD[questao];
+    document.getElementById('opcaoD').value = opcaoD[questao];
+    
+    document.getElementById('parar').style.visibility = "visible";
+    document.getElementById('proximo').value = "Próxima";
 }
 
 // iniciar o jogo
-    function jogar(resposta) {
-        switch(gabarito[questao]) {
-            case 'A': if (opcaoA[questao] == resposta) { 
-                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
-                                    document.getElementById('pergunta').innerHTML = "Certa Resposta";
-                                    num++;
-                                    pontos += 200000;
-                                }
-                                else {
-                                    document.getElementById('pergunta').style.backgroundColor = 'red';
-                                    document.getElementById('pergunta').innerHTML = "Resposta Errada";
-                                } 
-                                break; 
-            case 'B': if (opcaoB[questao] == resposta) { 
-                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
-                                    document.getElementById('pergunta').innerHTML = "Certa Resposta";
-                                    num++;
-                                    pontos += 200000;
-                                }
-                                else {
-                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
-                                    document.getElementById('pergunta').innerHTML = "Resposta Errada";
-                                }  
-                                break; 
-            case 'C':  if (opcaoC[questao] == resposta) { 
-                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
-                                    document.getElementById('pergunta').innerHTML = "Certa Resposta";
-                                    num++;
-                                    pontos += 200000;
-                                }
-                                else {
-                                    document.getElementById('pergunta').style.backgroundColor = 'red';
-                                    document.getElementById('pergunta').innerHTML = "Resposta Errada";
-                                }  
-                                break; 
-             case 'D': if (opcaoD[questao] == resposta) { 
-                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
-                                    document.getElementById('pergunta').innerHTML = "Certa Resposta";
-                                    num++;
-                                    pontos += 200000;
-                                }
-                                else {
-                                    document.getElementById('pergunta').style.backgroundColor = 'red';
-                                    document.getElementById('pergunta').innerHTML = "Resposta Errada";
-                                }  
-                                break; 
+        function jogar(resposta) {
+            switch(gabarito[questao]) {
+                case 'A': if (opcaoA[questao] == resposta) { 
+                                        document.getElementById('pergunta').style.backgroundColor = 'green';
+                                        document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                        num++;
+                                        pontos += 200000;
+                                    }
+                                    else {
+                                        document.getElementById('pergunta').style.backgroundColor = 'red';
+                                        document.getElementById('pergunta').innerHTML = "Resposta Errada<br>Você perdeu tudo";
+                                        num = 1;
+                                        pontos = 0;
+                                        document.getElementById('parar').style.visibility = "hidden";
+                                        document.getElementById('proximo').value = "Jogar Novamente";
+                                    } 
+                                    break; 
+                case 'B': if (opcaoB[questao] == resposta) { 
+                                        document.getElementById('pergunta').style.backgroundColor = 'green';
+                                        document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                        num++;
+                                        pontos += 200000;
+                                    }
+                                    else {
+                                        document.getElementById('pergunta').style.backgroundColor = 'red';
+                                        document.getElementById('pergunta').innerHTML = "Resposta Errada<br>Você perdeu tudo";
+                                        num = 1;
+                                        pontos = 0;
+                                        document.getElementById('parar').style.visibility = "hidden";
+                                        document.getElementById('proximo').value = "Jogar Novamente";
+                                    }  
+                                    break; 
+                case 'C': if (opcaoC[questao] == resposta) { 
+                                        document.getElementById('pergunta').style.backgroundColor = 'green';
+                                        document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                        num++;
+                                        pontos += 200000;
+                                    }
+                                    else {
+                                        document.getElementById('pergunta').style.backgroundColor = 'red';
+                                        document.getElementById('pergunta').innerHTML = "Resposta Errada<br>Você perdeu tudo";
+                                        num = 1;
+                                        pontos = 0;
+                                        document.getElementById('parar').style.visibility = "hidden";
+                                        document.getElementById('proximo').value = "Jogar Novamente";
+                                    }  
+                                    break; 
+                case 'D': if (opcaoD[questao] == resposta) { 
+                                        document.getElementById('pergunta').style.backgroundColor = 'green';
+                                        document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                        num++;
+                                        pontos += 200000;
+                                    }
+                                    else {
+                                        document.getElementById('pergunta').style.backgroundColor = 'red';
+                                        document.getElementById('pergunta').innerHTML = "Resposta Errada<br>Você perdeu tudo";
+                                        num = 1;
+                                        pontos = 0;
+                                        document.getElementById('parar').style.visibility = "hidden";
+                                        document.getElementById('proximo').value = "Jogar Novamente";
+                                    }  
+                                    break; 
+            }
+        
+            if (num > 5) {
+                document.getElementById('pergunta').style.backgroundColor = '#0080C0';
+                document.getElementById('pergunta').innerHTML = "Você ganhou R$ " + pontos;
+                num = 1;
+                pontos = 0;
+                document.getElementById('parar').style.visibility = "hidden";
+                document.getElementById('proximo').value = "Jogar Novamente";
+            }
         }
 
+        // se ganhar tudo
         if (num > 5) {
             document.getElementById('pergunta').style.backgroundColor = '#0080C0';
             document.getElementById('pergunta').innerHTML = "Você ganhou R$ " + pontos;
             num = 1;
             pontos = 0;
+            document.getElementById('parar').style.visibility = "hidden";
+            document.getElementById('proximo').value = "Jogar Novamente";
         }
-    }
+    
+    // se parar
+    function pararJogo() {
+		document.getElementById('pergunta').style.backgroundColor = '#0080C0';
+		document.getElementById('pergunta').innerHTML = "Você ganhou R$ " + pontos;
+		num = 1;
+		pontos = 0;
+		document.getElementById('parar').style.visibility = "hidden";
+		document.getElementById('proximo').value = "Jogar Novamente";
+}
 
     
