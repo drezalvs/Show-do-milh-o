@@ -118,7 +118,8 @@ var questao = 0;
 var pontos = 0;
 var num = 1;
 function sortearPergunta() {
-	questao = Math.round(Math.random() * 19);
+    questao = Math.round(Math.random() * 19);
+    document.getElementById('valor').innerHTML = "Pergunta que vale " + (pontos+200000);
 
 	document.getElementById('pergunta').innerHTML = pergunta[questao];
 	document.getElementById('pergunta').style.backgroundColor = 'brown';
@@ -176,6 +177,13 @@ function sortearPergunta() {
                                     document.getElementById('pergunta').innerHTML = "Resposta Errada";
                                 }  
                                 break; 
+        }
+
+        if (num > 5) {
+            document.getElementById('pergunta').style.backgroundColor = '#0080C0';
+            document.getElementById('pergunta').innerHTML = "Você ganhou R$ " + pontos;
+            num = 1;
+            pontos = 0;
         }
     }
 
