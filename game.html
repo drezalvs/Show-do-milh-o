@@ -13,17 +13,14 @@
         <img class="logo" src="imagens/logo.png" alt="logotipo">
     </div>
 
-    <div class="pergunta">
-        <p>Qual bicho transmite Doença de Chagas?</p>
-    </div>
-
+    
     <form>
 
-		<p>
-			<input type="button" class="r1" value="Pulga" onclick="jogar(this.value);">
-			<input type="button" class="r2" value="Barata" onclick="jogar(this.value);">
-			<input type="button" class="r3" value="Formiga" onclick="jogar(this.value);">
-			<input type="button" class="r4" value="Barbeiro" onclick="jogar(this.value);">
+		<p id="pergunta" class="pergunta"></p>
+			<input type="button" class="r1" id="opcaoA" onclick="jogar(this.value);">
+			<input type="button" class="r2" id="opcaoB" onclick="jogar(this.value);">
+			<input type="button" class="r3" id="opcaoC" onclick="jogar(this.value);">
+			<input type="button" class="r4" id="opcaoD" onclick="jogar(this.value);">
 		</p>
 
 	</form>

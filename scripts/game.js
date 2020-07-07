@@ -1,3 +1,4 @@
+
 var pergunta = new Array(20);
 pergunta[0] = "Qual bicho transmite Doença de Chagas?";
 pergunta[1] = "Qual fruto é conhecido no Norte e Nordeste como jerimum?";
@@ -113,5 +114,12 @@ var gabarito = new Array('D', 'B', 'A', 'C', 'C', 'B', 'B', 'D', 'D', 'B', 'D', 
 var questao = 0;
 function sortearPergunta() {
 	questao = Math.round(Math.random() * 19);
+
+	document.getElementById('pergunta').innerHTML = pergunta[questao];
+
+	document.getElementById('opcaoA').value = opcaoA[questao];
+	document.getElementById('opcaoB').value = opcaoB[questao];
+	document.getElementById('opcaoC').value = opcaoC[questao];
+	document.getElementById('opcaoD').value = opcaoD[questao];
 }
 
