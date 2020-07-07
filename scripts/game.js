@@ -115,6 +115,8 @@ var gabarito = new Array('D', 'B', 'A', 'C', 'C', 'B', 'B', 'D', 'D', 'B', 'D', 
 
 // sorteio
 var questao = 0;
+var pontos = 0;
+var num = 1;
 function sortearPergunta() {
 	questao = Math.round(Math.random() * 19);
 
@@ -133,6 +135,8 @@ function sortearPergunta() {
             case 'A': if (opcaoA[questao] == resposta) { 
                                     document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
                                     document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                    num++;
+                                    pontos += 200000;
                                 }
                                 else {
                                     document.getElementById('pergunta').style.backgroundColor = 'red';
@@ -142,6 +146,8 @@ function sortearPergunta() {
             case 'B': if (opcaoB[questao] == resposta) { 
                                     document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
                                     document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                    num++;
+                                    pontos += 200000;
                                 }
                                 else {
                                     document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
@@ -151,6 +157,8 @@ function sortearPergunta() {
             case 'C':  if (opcaoC[questao] == resposta) { 
                                     document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
                                     document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                    num++;
+                                    pontos += 200000;
                                 }
                                 else {
                                     document.getElementById('pergunta').style.backgroundColor = 'red';
@@ -160,6 +168,8 @@ function sortearPergunta() {
              case 'D': if (opcaoD[questao] == resposta) { 
                                     document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
                                     document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                    num++;
+                                    pontos += 200000;
                                 }
                                 else {
                                     document.getElementById('pergunta').style.backgroundColor = 'red';
