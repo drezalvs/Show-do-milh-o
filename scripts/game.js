@@ -123,3 +123,26 @@ function sortearPergunta() {
 	document.getElementById('opcaoD').value = opcaoD[questao];
 }
 
+    var resposta, gabarito, pontos;
+    pontos = 0; // pontos
+    num = 1; // questao
+
+    document.getElementById('pergunta').value = resposta; // document = a pag em si, getElementById = metodo que pega um elemento pelo id dele, vai pegar o id do visor1, value recebe programa, o que vai aparecer no visor1
+    document.getElementById('pergunta').value = "resposta" + "200.000";
+
+
+function jogar(resposta) { // this/value = qual é o value desse botão = ?
+    
+    document.getElementById('pergunta').value = resposta ;
+    
+    if (resposta == gabarito [num - 1]) // resposta ABCD, gabarito é o array, num - 1 vai comparar a resposta do usuario ao gabarito, -1 pq ele começa no zero
+    pontos ++; // toda vez que usuario acertar ele recebe +1, ++ = +1
+    
+    num ++; // vai pra próxima resposta
+
+    if (num > 20) {
+        document.getElementById('pergunta').value = "Você perdeu!"
+        document.getElementById('pergunta').value = "Pontuação:" + pontos;
+    }
+
+}
