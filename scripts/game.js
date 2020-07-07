@@ -143,7 +143,7 @@ function sortearPergunta() {
                                     document.getElementById('pergunta').innerHTML = "Certa Resposta";
                                 }
                                 else {
-                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
+                                    document.getElementById('pergunta').style.backgroundColor = 'red';
                                     document.getElementById('pergunta').innerHTML = "Resposta Errada";
                                 }  
                                 break; 
