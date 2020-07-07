@@ -130,7 +130,7 @@ function sortearPergunta() {
     function jogar(resposta) {
         switch(gabarito[questao]) {
             case 'A': if (opcaoA[questao] == resposta) { 
-                                    document.getElementById('pergunta').style.backgroundColor = 'green';
+                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
                                     document.getElementById('pergunta').innerHTML = "Certa Resposta";
                                 }
                                 else {
@@ -139,16 +139,16 @@ function sortearPergunta() {
                                 } 
                                 break; 
             case 'B': if (opcaoB[questao] == resposta) { 
-                                    document.getElementById('pergunta').style.backgroundColor = 'green';
+                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
                                     document.getElementById('pergunta').innerHTML = "Certa Resposta";
                                 }
                                 else {
-                                    document.getElementById('pergunta').style.backgroundColor = 'red';
+                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
                                     document.getElementById('pergunta').innerHTML = "Resposta Errada";
                                 }  
                                 break; 
             case 'C':  if (opcaoC[questao] == resposta) { 
-                                    document.getElementById('pergunta').style.backgroundColor = 'green';
+                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
                                     document.getElementById('pergunta').innerHTML = "Certa Resposta";
                                 }
                                 else {
@@ -157,7 +157,7 @@ function sortearPergunta() {
                                 }  
                                 break; 
              case 'D': if (opcaoD[questao] == resposta) { 
-                                    document.getElementById('pergunta').style.backgroundColor = 'green';
+                                    document.getElementById('pergunta').style.backgroundColor = 'rgb(0, 184, 0)';
                                     document.getElementById('pergunta').innerHTML = "Certa Resposta";
                                 }
                                 else {
