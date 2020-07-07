@@ -1,4 +1,4 @@
-
+// perguntas
 var pergunta = new Array(20);
 pergunta[0] = "Qual bicho transmite Doença de Chagas?";
 pergunta[1] = "Qual fruto é conhecido no Norte e Nordeste como jerimum?";
@@ -21,6 +21,7 @@ pergunta[17] = "Sashimi é um delicado prato originário de que país?";
 pergunta[18] = "Qual é a capital dos Estados Unidos?";
 pergunta[19] = "Qual sistema operacional da Microsoft?";
 
+// respostas
 var opcaoA = new Array(20);
 opcaoA[0] = "Pulga";
 opcaoA[1] = "Caju";
@@ -109,8 +110,10 @@ opcaoD[17] = "Indonésia";
 opcaoD[18] = "Washington";
 opcaoD[19] = "Opera";
 
+// gabarito
 var gabarito = new Array('D', 'B', 'A', 'C', 'C', 'B', 'B', 'D', 'D', 'B', 'D', 'C', 'B', 'C', 'D', 'A', 'B', 'A', 'D', 'B');
 
+// sorteio
 var questao = 0;
 function sortearPergunta() {
 	questao = Math.round(Math.random() * 19);
@@ -123,26 +126,46 @@ function sortearPergunta() {
 	document.getElementById('opcaoD').value = opcaoD[questao];
 }
 
-    var resposta, gabarito, pontos;
-    pontos = 0; // pontos
-    num = 1; // questao
-
-    document.getElementById('pergunta').value = resposta; // document = a pag em si, getElementById = metodo que pega um elemento pelo id dele, vai pegar o id do visor1, value recebe programa, o que vai aparecer no visor1
-    document.getElementById('pergunta').value = "resposta" + "200.000";
-
-
-function jogar(resposta) { // this/value = qual é o value desse botão = ?
-    
-    document.getElementById('pergunta').value = resposta ;
-    
-    if (resposta == gabarito [num - 1]) // resposta ABCD, gabarito é o array, num - 1 vai comparar a resposta do usuario ao gabarito, -1 pq ele começa no zero
-    pontos ++; // toda vez que usuario acertar ele recebe +1, ++ = +1
-    
-    num ++; // vai pra próxima resposta
-
-    if (num > 20) {
-        document.getElementById('pergunta').value = "Você perdeu!"
-        document.getElementById('pergunta').value = "Pontuação:" + pontos;
+// iniciar o jogo
+    function jogar(resposta) {
+        switch(gabarito[questao]) {
+            case 'A': if (opcaoA[questao] == resposta) { 
+                                    document.getElementById('pergunta').style.backgroundColor = 'green';
+                                    document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                }
+                                else {
+                                    document.getElementById('pergunta').style.backgroundColor = 'red';
+                                    document.getElementById('pergunta').innerHTML = "Resposta Errada";
+                                } 
+                                break; 
+            case 'B': if (opcaoB[questao] == resposta) { 
+                                    document.getElementById('pergunta').style.backgroundColor = 'green';
+                                    document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                }
+                                else {
+                                    document.getElementById('pergunta').style.backgroundColor = 'red';
+                                    document.getElementById('pergunta').innerHTML = "Resposta Errada";
+                                }  
+                                break; 
+            case 'C':  if (opcaoC[questao] == resposta) { 
+                                    document.getElementById('pergunta').style.backgroundColor = 'green';
+                                    document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                }
+                                else {
+                                    document.getElementById('pergunta').style.backgroundColor = 'red';
+                                    document.getElementById('pergunta').innerHTML = "Resposta Errada";
+                                }  
+                                break; 
+             case 'D': if (opcaoD[questao] == resposta) { 
+                                    document.getElementById('pergunta').style.backgroundColor = 'green';
+                                    document.getElementById('pergunta').innerHTML = "Certa Resposta";
+                                }
+                                else {
+                                    document.getElementById('pergunta').style.backgroundColor = 'red';
+                                    document.getElementById('pergunta').innerHTML = "Resposta Errada";
+                                }  
+                                break; 
+        }
     }
 
-}
+    
